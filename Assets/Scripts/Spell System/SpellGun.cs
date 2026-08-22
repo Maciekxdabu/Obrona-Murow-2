@@ -74,8 +74,6 @@ public class SpellGun : MonoBehaviour
                     maxDistance: Mathf.Infinity,
                     layerMask: spellTargetsMask))
             {
-                Debug.Log("Trafiony!");
-
                 Drob drobHit = hit.transform.GetComponent<Drob>();
 
                 if (drobHit)

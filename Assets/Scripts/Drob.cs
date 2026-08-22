@@ -1,3 +1,4 @@
+using DG.Tweening;
 using SymbolRecognition;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class Drob : MonoBehaviour
     //[SerializeField] private Dictionary<Symbol, Sprite> spellResults;
 
     private Collider collider;
+    private Sequence sequence;
 
     // ---------- Unity methods
 
@@ -27,6 +29,11 @@ public class Drob : MonoBehaviour
 
     // ---------- public methods
 
+    public void Initialize(Sequence sequence)
+    {
+        this.sequence = sequence;
+    }
+
     public void Trafiony(Symbol spell)
     {
         DefeatResult result = spellResults.Find(sr => sr.spell == spell);
@@ -34,5 +41,6 @@ public class Drob : MonoBehaviour
         collider.enabled = false;
 
         //TODO - Make drob stop moving and/or attack
+        sequence.Pause();
     }
 }
