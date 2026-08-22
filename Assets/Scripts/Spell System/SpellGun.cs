@@ -1,6 +1,5 @@
 using SymbolRecognition;
 using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,8 +14,17 @@ public class SpellGun : MonoBehaviour
     [SerializeField]//ShowIf("useInputSystemHere", true)
     [Tooltip("Change input to suit your needs, do not change names or types of inputs")]
     private InputActionReference spellClickAction;
+    [SerializeField] private Transform pointer;
+    [SerializeField] private LayerMask spellTargetsMask;
+
+    private Camera mainCamera;
 
     // ---------- Unity methods
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+    }
 
     private void OnEnable()
     {
@@ -54,8 +62,27 @@ public class SpellGun : MonoBehaviour
     {
         if (charges.Count > 0)
         {
-            Symbol spellCast = charges[0].Spend();
+            Symbol spellCast = charges[0].Cast();
             charges.RemoveAt(0);
+
+            Vector3 direction = (pointer.position - mainCamera.transform.position).normalized;
+
+            if (Physics.Raycast(
+                    mainCamera.transform.position,
+                    direction,
+                    out RaycastHit hit,
+                    maxDistance: Mathf.Infinity,
+                    layerMask: spellTargetsMask))
+            {
+                Debug.Log("Trafiony!");
+
+                Drob drobHit = hit.transform.GetComponent<Drob>();
+
+                if (drobHit)
+                {
+                    drobHit.Trafiony(spellCast);
+                }
+            }
         }
     }
 }

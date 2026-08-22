@@ -16,7 +16,7 @@ public class SpellCharge : MonoBehaviour
     /// Called when trying to spend a charge to cast
     /// </summary>
     /// <returns></returns>
-    public Symbol Spend()
+    public Symbol Cast()
     {
         Destroy(gameObject);
         return spell;
