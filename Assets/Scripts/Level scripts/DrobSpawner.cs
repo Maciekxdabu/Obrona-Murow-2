@@ -1,9 +1,16 @@
-using UnityEngine;
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class DrobSpawner : MonoBehaviour
 {
+    public enum DrobType
+    {
+        Kaczka,
+        Ges,
+        Kura,
+    }
+
     [System.Serializable]
     public struct SinglePath
     {
@@ -13,10 +20,8 @@ public class DrobSpawner : MonoBehaviour
     }
 
     [SerializeField] private GameObject drobPrefab;
-    [SerializeField] private float spawnInterval = 5;
+    [SerializeField] private DrobType drobType = DrobType.Kaczka;
     [SerializeField] public List<SinglePath> path;//its public for Editor tool
-
-    private float currentInterval = 1;
 
     // ---------- Unity messages
 
@@ -27,21 +32,6 @@ public class DrobSpawner : MonoBehaviour
             Debug.LogError("The prefab must have a Drob Component", gameObject);
             gameObject.SetActive(false);
             return;
-        }
-    }
-
-    private void Start()
-    {
-        currentInterval = spawnInterval;
-    }
-
-    private void Update()
-    {
-        currentInterval -= Time.deltaTime;
-        if (currentInterval < 0)
-        {
-            SpawnDrob();
-            currentInterval = spawnInterval;
         }
     }
 
@@ -56,7 +46,7 @@ public class DrobSpawner : MonoBehaviour
 
     // ---------- public methods
 
-    public void SpawnDrob()
+    public Drob SpawnDrob()
     {
         //Spawn drob
         Drob newDrob = Instantiate(drobPrefab).GetComponent<Drob>();
@@ -72,6 +62,15 @@ public class DrobSpawner : MonoBehaviour
             sequence.Play();
 
             newDrob.Initialize(sequence);
+
+            return newDrob;
         }
+
+        return null;
+    }
+
+    public DrobType GetDrobType()
+    {
+        return drobType;
     }
 }

@@ -20,6 +20,8 @@ public class Drob : MonoBehaviour
     private Collider collider;
     private Sequence sequence;
 
+    private static List<Drob> aliveDrobs = new List<Drob>();
+
     // ---------- Unity methods
 
     private void Awake()
@@ -32,6 +34,7 @@ public class Drob : MonoBehaviour
     public void Initialize(Sequence sequence)
     {
         this.sequence = sequence;
+        aliveDrobs.Add(this);
     }
 
     public void Trafiony(Symbol spell)
@@ -42,5 +45,13 @@ public class Drob : MonoBehaviour
 
         //TODO - Make drob stop moving and/or attack
         sequence.Pause();
+        aliveDrobs.Remove(this);
+    }
+
+    // ---------- public static methods
+
+    public static bool IsAllDrobDefeated()
+    {
+        return aliveDrobs.Count == 0;
     }
 }
