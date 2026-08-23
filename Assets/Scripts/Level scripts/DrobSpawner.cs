@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class DrobSpawner : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DrobSpawner : MonoBehaviour
         public List<Vector3> pathPoints;
         public float duration;
         public Color debugColor;
+        [SortingLayer]
+        public int sortingLayer;
     }
 
     [SerializeField] private GameObject drobPrefab;
@@ -59,7 +62,9 @@ public class DrobSpawner : MonoBehaviour
             Sequence sequence = DOTween.Sequence();
             path.ForEach(singlePath =>
             {
+                sequence.AppendCallback(() => newDrob.ChangeSortingLayer(singlePath.sortingLayer));
                 sequence.Append(newDrob.transform.DOLocalPath(singlePath.pathPoints.ToArray(), singlePath.duration));
+                
             });
             sequence.Play();
 

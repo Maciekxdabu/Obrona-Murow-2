@@ -48,6 +48,11 @@ public class Drob : MonoBehaviour
         aliveDrobs.Remove(this);
     }
 
+    public void ChangeSortingLayer(int newSortingLayer)
+    {
+        spriteRenderer.sortingLayerID = newSortingLayer;
+    }
+
     // ---------- public static methods
 
     public static bool IsAllDrobDefeated()
