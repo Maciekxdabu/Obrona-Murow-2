@@ -66,6 +66,10 @@ public class DrobSpawner : MonoBehaviour
                 sequence.Append(newDrob.transform.DOLocalPath(singlePath.pathPoints.ToArray(), singlePath.duration));
                 
             });
+            sequence.AppendCallback(() =>
+            {
+                LevelController.Instance.OnDrobUBram();
+            });
             sequence.Play();
 
             newDrob.Initialize(sequence);

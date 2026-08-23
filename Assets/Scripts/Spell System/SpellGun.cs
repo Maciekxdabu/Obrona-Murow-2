@@ -11,6 +11,7 @@ public class SpellGun : MonoBehaviour
     [SerializeField] private GameObject spellChargePrefab;
     [SerializeField] private Transform spellChargesParent;
     [Header("Spellcasting")]
+    [SerializeField] private bool activeSpellcasting = true;
     [SerializeField]//ShowIf("useInputSystemHere", true)
     [Tooltip("Change input to suit your needs, do not change names or types of inputs")]
     private InputActionReference spellClickAction;
@@ -55,11 +56,16 @@ public class SpellGun : MonoBehaviour
         }
     }
 
+    public void StopGunning()
+    {
+        activeSpellcasting = false;
+    }
+
     // ---------- private methods
 
     private void OnSpellCast(InputAction.CallbackContext ctx)
     {
-        if (charges.Count > 0)
+        if (activeSpellcasting && charges.Count > 0)
         {
             Symbol spellCast = charges[0].Cast();
             charges.RemoveAt(0);
