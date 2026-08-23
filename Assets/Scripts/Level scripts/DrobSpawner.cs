@@ -39,8 +39,10 @@ public class DrobSpawner : MonoBehaviour
     {
         path.ForEach(singlePath =>
         {
-            Gizmos.color = singlePath.debugColor; ;
-            Gizmos.DrawLineStrip(singlePath.pathPoints.ToArray(), false);
+            Gizmos.color = singlePath.debugColor;
+            Vector3[] drawnPoints = singlePath.pathPoints.ToArray();
+            transform.TransformPoints(drawnPoints);
+            Gizmos.DrawLineStrip(drawnPoints, false);
         });
     }
 
@@ -49,7 +51,7 @@ public class DrobSpawner : MonoBehaviour
     public Drob SpawnDrob()
     {
         //Spawn drob
-        Drob newDrob = Instantiate(drobPrefab).GetComponent<Drob>();
+        Drob newDrob = Instantiate(drobPrefab, transform).GetComponent<Drob>();
 
         if (newDrob)
         {
@@ -57,7 +59,7 @@ public class DrobSpawner : MonoBehaviour
             Sequence sequence = DOTween.Sequence();
             path.ForEach(singlePath =>
             {
-                sequence.Append(newDrob.transform.DOPath(singlePath.pathPoints.ToArray(), singlePath.duration));
+                sequence.Append(newDrob.transform.DOLocalPath(singlePath.pathPoints.ToArray(), singlePath.duration));
             });
             sequence.Play();
 

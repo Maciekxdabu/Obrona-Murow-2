@@ -6,6 +6,7 @@ namespace SymbolRecognition
     public class CursorMovement : MonoBehaviour
     {
         [SerializeField]
+        [Tooltip("Should be the delta of the used pointer")]
         private InputAction mouseMovement;
 
         [SerializeField]

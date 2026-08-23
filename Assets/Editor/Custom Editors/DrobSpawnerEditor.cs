@@ -1,5 +1,4 @@
 using UnityEditor;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 [CustomEditor(typeof(DrobSpawner))]
@@ -20,11 +19,11 @@ public class DrobSpawnerEditor : Editor
 
                 Vector3 point = drobSpawner.path[i].pathPoints[j];
                 EditorGUI.BeginChangeCheck();
-                Vector3 newPoint = Handles.PositionHandle(point, Quaternion.identity);
+                Vector3 newPoint = Handles.PositionHandle(drobSpawner.transform.TransformPoint(point), drobSpawner.transform.rotation);
                 if (EditorGUI.EndChangeCheck())
                 {
                     Undo.RecordObject(drobSpawner, "Change Look At Target Position");
-                    drobSpawner.path[i].pathPoints[j] = newPoint;
+                    drobSpawner.path[i].pathPoints[j] = drobSpawner.transform.InverseTransformPoint(newPoint);
                 }
             }
         }

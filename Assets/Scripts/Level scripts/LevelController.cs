@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class LevelController : MonoBehaviour
 {
@@ -9,17 +10,20 @@ public class LevelController : MonoBehaviour
     public class Segment
     {
         public List<DrobSpawner> spawners;
+        public Vector3 worldRotation;
+        public float rotationTime = 0.1f;
 
         [NonSerialized]
         public LevelDataSO.SegmentData data;
     }
 
     [SerializeField] private LevelDataSO levelData;
+    [SerializeField] private Transform worldTransform;
     [SerializeField] private List<Segment> segments;
 
     private bool active = false;
     private int activeSegmentId = -1;
-    Segment activeSegment = null;
+    private Segment activeSegment = null;
     private float currentPoints = 0f;
 
     // -------- Unity methods
@@ -92,23 +96,34 @@ public class LevelController : MonoBehaviour
 
     private void StartNewSegment()
     {
-        Debug.Log("Zaczynamy dzisiaj nowy segment");
+        Debug.Log("Zaczynamy dzisiaj nowy segment!");
 
         activeSegmentId++;
+        currentPoints = 0;
 
         //Check win condition
         if (activeSegmentId >= segments.Count)
+        {
             OnWinCondition();
+            activeSegment = null;
+            return;
+        }
 
-        //TODO - Rotate camera to a proper position before starting a segment (DOTween?)
-
-        //Start new segment
+        //Rotate camera and start a new segment after it finishes
+        active = false;
         activeSegment = segments[activeSegmentId];
+        worldTransform.transform.DORotate(activeSegment.worldRotation, activeSegment.rotationTime).OnComplete(OnStartNewSegment);
+    }
+
+    private void OnStartNewSegment()
+    {
         activeSegment.data.drobStats.ForEach((drobStat) =>
         {
             drobStat.currentTimer = drobStat.initialSpawnDelay;
             drobStat.spawners = activeSegment.spawners.FindAll(spawner => spawner.GetDrobType() == drobStat.type);
         });
+
+        active = true;
     }
 
     private void OnWinCondition()

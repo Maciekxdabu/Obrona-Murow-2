@@ -49,9 +49,8 @@ public class SpellGun : MonoBehaviour
 
         for (int i=0; i<chargesPerLoad; i++)
         {
-            SpellCharge newCharge = Instantiate(spellChargePrefab).GetComponent<SpellCharge>();
+            SpellCharge newCharge = Instantiate(spellChargePrefab, spellChargesParent).GetComponent<SpellCharge>();
             newCharge.Initialize(newSpell);
-            newCharge.transform.SetParent(spellChargesParent);
             charges.Add(newCharge);
         }
     }
