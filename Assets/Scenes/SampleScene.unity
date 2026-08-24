@@ -248,51 +248,63 @@ MonoBehaviour:
     - {x: 0.54917836, y: -0.27221298, z: -2.742241}
     duration: 3
     debugColor: {r: 1, g: 0, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: 0.54917836, y: -0.27221298, z: -2.742241}
     - {x: 5.946014, y: -0.27221298, z: -2.742241}
     duration: 0.5
     debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: 5.946014, y: -0.27221298, z: -2.742241}
     - {x: 5.946014, y: -0.27221298, z: -2.742241}
     duration: 2
     debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: 5.946014, y: -0.27221298, z: -2.742241}
     - {x: 0.694509, y: -0.27221298, z: -3.1726532}
     duration: 0.5
     debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: 0.694509, y: -0.27221298, z: -3.1726532}
     - {x: 0.5752249, y: 0.7149763, z: -4.2910233}
     - {x: -3.4000623, y: -0.90785027, z: -11.288525}
     duration: 3
     debugColor: {r: 0.024262667, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: -3.4000623, y: -0.90785027, z: -11.288525}
     - {x: -6.22, y: -0.27221107, z: -13.210613}
     duration: 2
     debugColor: {r: 0.0048110485, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: -6.22, y: -0.27221107, z: -13.210613}
     - {x: -6.22, y: -0.27221107, z: -13.210613}
     duration: 2
     debugColor: {r: 1, g: 0.8795767, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: -6.22, y: -0.27221107, z: -13.210613}
     - {x: -3.774514, y: -0.27221203, z: -13.210611}
-    - {x: 3.63, y: 9.421162, z: -33.5}
+    - {x: 3.63, y: 0.9237175, z: -37.63319}
     duration: 3
     debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
+  - pathPoints:
+    - {x: 3.63, y: 0.9237175, z: -37.63319}
+    - {x: 3.63, y: 13.829837, z: -37.63319}
+    duration: 2
+    debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
+    sortingLayer: 264756293
+  - pathPoints:
+    - {x: 3.63, y: 13.829837, z: -37.63319}
+    - {x: 3.63, y: 13.829837, z: -41.76}
+    duration: 3
+    debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
+    sortingLayer: -2018873293
 --- !u!4 &168818539
 Transform:
   m_ObjectHideFlags: 0
@@ -736,6 +748,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -817,6 +830,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &519420033
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a87fb851befc7ae4b924cb763440200d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &611330245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,8 +1439,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 264756293
-  m_SortingLayer: -2
+  m_SortingLayerID: -2018873293
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4288160106207586483, guid: 1d0fd3e797a9ece4cbfab137b6dc3d91, type: 3}
@@ -1427,20 +1537,20 @@ MonoBehaviour:
     - {x: -8.283052, y: -2.1270409, z: 2.2937665}
     duration: 4
     debugColor: {r: 1, g: 0, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: -8.283052, y: -2.1270409, z: 2.2937665}
     - {x: -8.294832, y: 0.714982, z: -0.055878144}
     - {x: -17.659382, y: 0, z: 1.1103234}
     duration: 4
     debugColor: {r: 0.024262667, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
   - pathPoints:
     - {x: -17.659382, y: 0, z: 1.1103234}
     - {x: -37.39179, y: 14.426006, z: -2.6417613}
     duration: 0.5
     debugColor: {r: 0.87480843, g: 1, b: 0, a: 1}
-    sortingLayer: 0
+    sortingLayer: 264756293
 --- !u!4 &1326710371
 Transform:
   m_ObjectHideFlags: 0
