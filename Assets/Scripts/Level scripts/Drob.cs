@@ -19,6 +19,7 @@ public class Drob : MonoBehaviour
 
     private Collider collider;
     private Sequence sequence;
+    private Transform mainCameraTransform;
 
     private static List<Drob> aliveDrobs = new List<Drob>();
 
@@ -27,6 +28,12 @@ public class Drob : MonoBehaviour
     private void Awake()
     {
         collider = GetComponent<Collider>();
+        mainCameraTransform = Camera.main.transform;
+    }
+
+    private void Update()
+    {
+        transform.LookAt(mainCameraTransform.position, transform.parent.up);
     }
 
     // ---------- public methods

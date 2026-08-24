@@ -8,6 +8,7 @@ public class DrobSpawner : MonoBehaviour
     public enum DrobType
     {
         Kaczka,
+        Pingwin,
         Ges,
         Kura,
     }

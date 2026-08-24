@@ -13,22 +13,66 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: Assembly-CSharp::LevelDataSO
   segmentsData:
-  - pointSum: 100
+  - pointSum: 400
     pointDeltaStep: 0
     pointDeltaStepDelta: 0
     drobStats:
     - type: 0
       punkty: 20
       speed: 1
-      spawnDelay: 3
+      spawnDelay: 2
       spawnDelayDelta: 0
       initialSpawnDelay: 0
-  - pointSum: 200
+  - pointSum: 600
     pointDeltaStep: 0
     pointDeltaStepDelta: 0
     drobStats:
     - type: 0
-      punkty: 50
+      punkty: 20
+      speed: 3
+      spawnDelay: 2
+      spawnDelayDelta: 0
+      initialSpawnDelay: 0
+    - type: 1
+      punkty: 20
+      speed: 3
+      spawnDelay: 2
+      spawnDelayDelta: 0
+      initialSpawnDelay: 0
+  - pointSum: 800
+    pointDeltaStep: 0
+    pointDeltaStepDelta: 0
+    drobStats:
+    - type: 0
+      punkty: 20
+      speed: 3
+      spawnDelay: 2
+      spawnDelayDelta: 0
+      initialSpawnDelay: 0
+    - type: 1
+      punkty: 20
+      speed: 3
+      spawnDelay: 2
+      spawnDelayDelta: 0
+      initialSpawnDelay: 0
+  - pointSum: 1200
+    pointDeltaStep: 0
+    pointDeltaStepDelta: 0
+    drobStats:
+    - type: 0
+      punkty: 20
+      speed: 3
+      spawnDelay: 2
+      spawnDelayDelta: 0
+      initialSpawnDelay: 0
+    - type: 1
+      punkty: 20
+      speed: 3
+      spawnDelay: 2
+      spawnDelayDelta: 0
+      initialSpawnDelay: 0
+    - type: 1
+      punkty: 20
       speed: 3
       spawnDelay: 2
       spawnDelayDelta: 0
