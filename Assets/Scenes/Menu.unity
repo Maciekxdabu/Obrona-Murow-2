@@ -949,9 +949,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Napisy pocz\u0105tkowe\n\nMaciej \"Merloj\" Doma\u0144ski - PrzedArcyProgramista\nMateusz
-    \"Bobromir\" Bykowski - Grafika\nLiliana \"Lili\" Palusi\u0144ska - Muzyka\nBart\u0142omiej
-    Brosz - Grafika z Reksio i Czarodzieje\nGrzegorz Wolf - Narrator z Reksio i Czarodzieje"
+  m_text: "Napisy pocz\u0105tkowe\n\n\"Merloj\" - PrzedArcyProgramista\n\"Bobromir\"
+    - Grafika\n\"Lili\" - Muzyka\nBart\u0142omiej Brosz - Grafika z Reksio i Czarodzieje\nGrzegorz
+    Wolf - Narrator z Reksio i Czarodzieje"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 657193517335828509, guid: 2448ae24c6eb8bf4cbb98f99a743b124, type: 3}
+  m_Sprite: {fileID: 657193517335828509, guid: 23279f954b19e4943b8ffaf5aae57d53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
