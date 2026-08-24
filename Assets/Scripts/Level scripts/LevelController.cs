@@ -34,6 +34,7 @@ public class LevelController : MonoBehaviour
     private int activeSegmentId = -1;
     private Segment activeSegment = null;
     private float currentPoints = 0f;
+    private bool przegrywaszPrzegrywasz = false;
 
     private AudioSource audioSource;
 
@@ -112,6 +113,10 @@ public class LevelController : MonoBehaviour
 
     public void OnDrobUBram()
     {
+        if (przegrywaszPrzegrywasz) return;
+
+        przegrywaszPrzegrywasz = true;
+
         Sequence sequence = DOTween.Sequence();
 
         sequence.AppendCallback(() =>
