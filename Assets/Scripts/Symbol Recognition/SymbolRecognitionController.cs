@@ -42,6 +42,10 @@ namespace SymbolRecognition
         [Tooltip("Minimum number of particles/directions for the direction to be registered in the final symbol")]
         private int minParticleThresh = 2;
 
+        [SerializeField]
+        [Tooltip("Game Object representing Particle drawn when flashing a successfully drawn symbol")]
+        private GameObject flashSpellParticle;
+
         [SerializeField, Min(1)]
         [Tooltip("Minimum number of particles in a pool to flash symbols after being drawn")]
         private int flashParticleNumber;
@@ -358,7 +362,7 @@ namespace SymbolRecognition
                 flashPartPool.Clear();
 
                 for (int i = 0; i < flashParticleNumber; i++)
-                    flashPartPool.Add(Instantiate(spellParticle, particleParent).GetComponent<SymbolParticle>());
+                    flashPartPool.Add(Instantiate(flashSpellParticle, particleParent).GetComponent<SymbolParticle>());
 
                 currentFlashPartIndex = 0;
             }

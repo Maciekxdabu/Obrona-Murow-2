@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2988271012022885403}
   - component: {fileID: 7708264623722540065}
   m_Layer: 0
-  m_Name: Particle
+  m_Name: Particle Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1544661150305850119, guid: 3c781b885c5db6549beb90b6f2fa0117, type: 3}
+  m_Sprite: {fileID: -8182249556432434403, guid: dbd82adcf73aea444b76dd54b6493daf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
