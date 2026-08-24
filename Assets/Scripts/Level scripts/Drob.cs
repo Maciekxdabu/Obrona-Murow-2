@@ -36,6 +36,11 @@ public class Drob : MonoBehaviour
         transform.LookAt(mainCameraTransform.position, transform.parent.up);
     }
 
+    private void OnDestroy()
+    {
+        sequence.Kill();
+    }
+
     // ---------- public methods
 
     public void Initialize(Sequence sequence)
